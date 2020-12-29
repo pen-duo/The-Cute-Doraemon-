@@ -15,6 +15,27 @@
     *::before {box-sizing: border-box};
     *::after {box-sizing: border-box}
     ol,ul{list-style-type: none;}
+    .active {
+    display: block;
+  }  
+  #btns {
+    position: absolute;
+    display: flex;
+    position: fixed;
+    top: 0;
+    right: 20px;
+    flex-direction: column;
+  }
+  #btns>button {
+    margin-top: 10px;
+    margin-right: 10px;
+    width: 75px;
+    padding: 8px 0;
+    color: #fff;
+    background-color: #f5cc07;
+    cursor: pointer;
+    font-size: 16px;
+  }
     #html {
       word-break: break-all;
     }
@@ -40,7 +61,7 @@ html {
 .doraemon {
   width: 500px;
   height: 610px;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
@@ -609,7 +630,13 @@ html {
   top: 410px;
   -webkit-transform: rotate(20deg);
 }
-    }
+ 
+   }
+   @media(max-width:600px){
+     #btns {
+       display: none;
+     }
+   }
   </style>
 <div class="doraemon">
   <div class="head">
@@ -663,6 +690,14 @@ html {
     <div class="leg right"></div>
     <div class="right foot"></div>
   </div>
+</div>
+<div id="btns">
+<button class="btnPause">暂停</button>
+<button class="btnPlay">播放</button>
+<button class="btnSlow">慢速</button>
+<button class="btnNormal">中速</button>
+<button class="btnFast"> 快速</button>
+<button class="btnPreview">预览</button>
 </div>
 <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="main.js"></script>
